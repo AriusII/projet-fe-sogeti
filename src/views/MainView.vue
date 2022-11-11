@@ -203,28 +203,57 @@ export default {
           </div>
         </div>
 
-        <div class="col-md-5 col-lg-6 col-xl-4 col-xxl-6 offset-lg-0 text-center text-md-start invisible" id="itemsMenu">
-                    <h2 class="display-6 fw-bold text-center"><span class="underline pb-1">To Do Items<br></span></h2>
-                    <hr>
-                        <h3 class="text-center">{{ list_name }}</h3>
-                        <span>{{ list_desc }}</span>
-                    <hr>
-                    <div class="row">
-                        <div class="col">
-                            <ul class="list-group">
-                                <li class="list-group-item" v-for="item in items" :key="item.id">
-                                    <div class="input-group mb-2 mt-2">
-                                        <div class="input-group-text">
-                                            <input type="checkbox" class="form-check-input mt-0" aria-label="Checkbox for following text input" :id="`checkbox${item.id}`" @click="checkboxItemClicked(item.id)" v-model="item.status" :checked="item.status">
-                                        </div>
-                                        <span class="input-group-text w-75">{{ item.item_name }}</span>
-                                        <button class="btn btn-outline-danger" data-bs-toggle="tooltip" data-bss-tooltip="" type="button" style="margin-left: 0px;width: 50px;" title="Caution, perform a click here can delete the select item." @click="deleteItem(item.id)">X</button>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+        <div
+          class="col-md-5 col-lg-6 col-xl-4 col-xxl-6 offset-lg-0 text-center text-md-start invisible"
+          id="itemsMenu"
+        >
+          <h2 class="display-6 fw-bold text-center">
+            <span class="underline pb-1">To Do Items<br /></span>
+          </h2>
+          <hr />
+          <h3 class="text-center">{{ list_name }}</h3>
+          <span>{{ list_desc }}</span>
+          <hr />
+          <div class="row">
+            <div class="col">
+              <ul class="list-group">
+                <li
+                  class="list-group-item"
+                  v-for="item in items"
+                  :key="item.id"
+                >
+                  <div class="input-group mb-2 mt-2">
+                    <div class="input-group-text">
+                      <input
+                        type="checkbox"
+                        class="form-check-input mt-0"
+                        aria-label="Checkbox for following text input"
+                        :id="`checkbox${item.id}`"
+                        @click="checkboxItemClicked(item.id)"
+                        v-model="item.status"
+                        :checked="item.status"
+                      />
                     </div>
-                </div>
+                    <span class="input-group-text w-75">{{
+                      item.item_name
+                    }}</span>
+                    <button
+                      class="btn btn-outline-danger"
+                      data-bs-toggle="tooltip"
+                      data-bss-tooltip=""
+                      type="button"
+                      style="margin-left: 0px; width: 50px"
+                      title="Caution, perform a click here can delete the select item."
+                      @click="deleteItem(item.id)"
+                    >
+                      X
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         <div
           class="col-md-5 col-lg-3 col-xl-4 col-xxl-3 text-center text-md-start invisible"
@@ -247,7 +276,9 @@ export default {
                 </button>
                 <div class="dropdown-menu">
                   <!-- <a class="dropdown-item" href="#">Edit the list</a -->
-                  <a class="dropdown-item" type="button" @click="deleteList">Delete the list</a>
+                  <a class="dropdown-item" type="button" @click="deleteList"
+                    >Delete the list</a
+                  >
                   <!--<a class="dropdown-item" href="#">Close the list</a>-->
                 </div>
               </div>
@@ -269,7 +300,10 @@ export default {
                     data-bs-placement="bottom"
                     type="button"
                     title="You can add your ToDo things here."
-                    @click="createItem">Add</button>
+                    @click="createItem"
+                  >
+                    Add
+                  </button>
                 </div>
               </div>
             </div>
@@ -333,43 +367,81 @@ export default {
     </div>
   </footer>
   <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Logout</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Oh, do you really want leave us ?</p>
-                </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal" @click="logout">Yes</button><button class="btn btn-primary" type="button" data-bs-dismiss="modal">No</button></div>
-            </div>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Logout</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
-    </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="modal-2">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Create a new ToDo list ?</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group mt-2 mb-2">
-                        <span class="input-group-text">Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
-                        <input type="text" class="form-control" id="newName">
-                    </div>
-                    <div class="input-group mt-2 mb-2">
-                        <span class="input-group-text">Description</span>
-                        <input type="text" class="form-control" id="newDesc">
-                    </div>
-                    <div class="input-group mt-4 mb-2">
-                        <span class="input-group-text">New Todo&nbsp;&nbsp;</span>
-                        <input type="text" class="form-control" id="newItem">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal" @click="createNewList">Create</button>
-                </div>
-            </div>
+        <div class="modal-body">
+          <p>Oh, do you really want leave us ?</p>
         </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-light"
+            type="button"
+            data-bs-dismiss="modal"
+            @click="logout"
+          >
+            Yes</button
+          ><button
+            class="btn btn-primary"
+            type="button"
+            data-bs-dismiss="modal"
+          >
+            No
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="modal fade" role="dialog" tabindex="-1" id="modal-2">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create a new ToDo list ?</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mt-2 mb-2">
+            <span class="input-group-text"
+              >Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span
+            >
+            <input type="text" class="form-control" id="newName" />
+          </div>
+          <div class="input-group mt-2 mb-2">
+            <span class="input-group-text">Description</span>
+            <input type="text" class="form-control" id="newDesc" />
+          </div>
+          <div class="input-group mt-4 mb-2">
+            <span class="input-group-text">New Todo&nbsp;&nbsp;</span>
+            <input type="text" class="form-control" id="newItem" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-light" type="button" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-dismiss="modal"
+            @click="createNewList"
+          >
+            Create
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
