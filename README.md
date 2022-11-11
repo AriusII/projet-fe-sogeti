@@ -1,52 +1,29 @@
 # projet-fe-sogeti
 
-This template should help get you started developing with Vue 3 in Vite.
+This is an evaluation project for the Sogeti company.
 
-## Recommended IDE Setup
+The context of this project was to create a Todo List manager Web App.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Back-end can be found here: https://github.com/AriusII/projet-be-sogeti
 
-## Type Support for `.vue` Imports in TS
+## Creds' for the user to test the app
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- username: `eval`
+- password: `eval`
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+or
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- username: `test`
+- password: `test`
 
-## Customize configuration
+## How to run the tests
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- You can go at : http://82.64.190.33:5173/ to test the app
 
-## Project Setup
+- You can also run the tests locally by cloning the project and following the instructions below
 
-```sh
-npm install
-```
+## How to run the app
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- Clone the repo
+- Run `npm install`
+- Run `npm run dev`
