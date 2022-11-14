@@ -241,6 +241,7 @@ export default {
                       class="btn btn-outline-danger"
                       data-bs-toggle="tooltip"
                       data-bss-tooltip=""
+                      data-bs-placement="bottom"
                       type="button"
                       style="margin-left: 0px; width: 50px"
                       title="Caution, perform a click here can delete the select item."

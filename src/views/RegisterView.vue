@@ -7,7 +7,7 @@ const register = () => {
     username: username,
     password: password,
   };
-  fetch("http://82.64.190.33:3000/users/api/register", {
+  fetch("http://82.64.190.33:3000/api/users/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
